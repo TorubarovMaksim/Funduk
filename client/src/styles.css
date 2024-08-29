@@ -1,0 +1,207 @@
+/* Общие стили */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f5f2; /* Нежный кремовый фон для всего сайта */
+  color: #333; /* Тёмно-серый цвет текста */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Обеспечиваем, что тело занимает весь высоту экрана */
+}
+
+/* Header */
+header {
+  background-color: #f7e6d5; /* Кремовый фон для header */
+  color: #333;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень для header */
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #d4a59a; /* Нежный розовый цвет при наведении */
+  transform: scale(1.1);
+}
+
+.auth-section {
+  display: flex;
+  align-items: center;
+}
+
+.username {
+  margin-right: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.username:hover {
+  color: #d4a59a; /* Нежный розовый цвет при наведении */
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.logout-button:hover {
+  color: #d4a59a; /* Нежный розовый цвет при наведении */
+  text-decoration: underline;
+}
+
+.auth-section a {
+  color: #333;
+  text-decoration: none;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.auth-section a:hover {
+  color: #d4a59a; /* Нежный розовый цвет при наведении */
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #f7e6d5; /* Кремовый фон для footer */
+  color: #333;
+  position: relative; /* Меняем с фиксированного на относительное */
+  padding: 10px 20px;
+  text-align: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень для footer */
+}
+
+/* Основной контент */
+.main-content {
+  flex: 1; /* Позволяет основному контенту занимать доступное пространство */
+  padding: 20px;
+  margin-bottom: 60px; /* Отступ снизу для футера */
+}
+
+/* Заголовки */
+h1, h2 {
+  color: #d4a59a; /* Нежный розовый цвет для заголовков */
+}
+
+/* Формы */
+form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff; /* Белый фон для формы */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень для формы */
+  transition: transform 0.3s ease;
+}
+
+form:hover {
+  transform: scale(1.02); /* Легкое увеличение при наведении */
+}
+
+/* Инпуты и кнопки */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd; /* Светло-серая граница для инпутов */
+  border-radius: 4px;
+  background-color: #f8f5f2; /* Кремовый фон для инпутов */
+  color: #333; /* Тёмно-серый текст для инпутов */
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #d4a59a; /* Нежный розовый цвет для фокуса */
+  outline: none;
+}
+
+button {
+  padding: 10px;
+  width: 100px;
+  background-color: #d4a59a; /* Нежный розовый цвет для кнопок */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #b5938d; /* Более тёмный розовый цвет при наведении */
+  transform: scale(1.05);
+}
+
+/* Сообщения об ошибках */
+.error {
+  color: #f28b82; /* Светло-красный цвет для сообщений об ошибках */
+  font-size: 0.9em;
+  background-color: #f5e8e8; /* Светло-розовый фон для сообщений об ошибках */
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* Ссылки */
+a {
+  color: #d4a59a; /* Нежный розовый цвет для ссылок */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #b5938d; /* Более тёмный розовый цвет при наведении */
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .add-product-form {
+    margin-top: 10px;
+  }
+
+  .add-product-form input, .add-product-form button {
+    width: 100%;
+  }
+
+  .product-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    max-width: 90%; /* Ширина карточки на мобильных устройствах */
+  }
+}

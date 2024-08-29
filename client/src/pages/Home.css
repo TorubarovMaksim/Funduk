@@ -1,0 +1,217 @@
+/* Основной стиль для страницы */
+.home-page {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #faf3e0; /* Кремовый фон для страницы */
+  color: #333;
+  min-height: 100vh; /* Гарантируем, что высота страницы занимает весь экран */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box; /* Учитываем паддинги и бордеры в общей высоте */
+}
+
+/* Гарантируем, что футер всегда находится внизу страницы */
+footer {
+  margin-top: auto;
+}
+
+/* Обеспечим, что нижний блок не перекрывает футер */
+.main-content {
+  flex: 1;
+  padding-bottom: 60px; /* Отступ для футера, чтобы не перекрывать его */
+}
+
+/* Основной стиль для заголовков */
+h1 {
+  text-align: center;
+  margin-bottom: 10%;
+  font-size: 7svh; /* Процент от высоты окна просмотра */
+  margin: 0;
+  padding: 0;
+  color: #5a3e2b; /* Теплый коричневый цвет для заголовка */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 10%;
+  padding: 10px;
+  font-size: 5svh; /* Процент от высоты окна просмотра */
+  margin: 0;
+  color: #9c5f3673; /* Теплый коричневый цвет для заголовка */
+}
+
+/* Адаптивные стили для заголовков на маленьких экранах */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 5svh; /* Уменьшаем размер заголовка h1 на устройствах до 768px */
+  }
+
+  h2 {
+    font-size: 4svh; /* Уменьшаем размер заголовка h2 на устройствах до 768px */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 4svh; /* Еще больше уменьшаем размер заголовка h1 на устройствах до 480px */
+  }
+
+  h2 {
+    font-size: 3svh; /* Еще больше уменьшаем размер заголовка h2 на устройствах до 480px */
+  }
+}
+
+/* Стили для списка продуктов */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+/* Стили для карточек продуктов */
+.product-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-details {
+  padding: 15px;
+}
+
+.product-name {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+  color: #5a3e2b; /* Теплый коричневый цвет для названия */
+}
+
+.product-price {
+  font-size: 1.2em;
+  margin: 0;
+  color: #a95e3e; /* Оранжево-кремовый цвет для цены */
+}
+
+.product-description {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.product-overview {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Модальное окно и затемнение */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0; /* Начальное состояние невидимо */
+  visibility: hidden; /* Начальное состояние скрыто */
+  transition: opacity 0.4s ease, visibility 0.4s ease; /* Переход для плавности появления */
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible; /* Показываем модальное окно */
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px; /* Уменьшаем максимальную ширину */
+  max-height: 80vh; /* Ограничиваем высоту модального окна */
+  position: relative;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: auto; /* Добавляем прокрутку при необходимости */
+  transform: scale(0.9); /* Начальное состояние уменьшено */
+  opacity: 0; /* Начальное состояние невидимо */
+  transition: transform 0.4s ease, opacity 0.4s ease; /* Переход для плавности появления */
+}
+
+.modal-overlay.show .modal-content {
+  transform: scale(1); /* Плавное увеличение */
+  opacity: 1; /* Плавное появление */
+}
+
+.modal-title {
+  font-size: 1.8em; /* Уменьшаем размер заголовка */
+  color: #5a3e2b;
+  margin: 0;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  max-height: 50vh; /* Ограничиваем высоту изображения */
+  object-fit: contain; /* Сохраняем пропорции изображения */
+  margin: 10px 0;
+}
+
+.modal-price {
+  font-size: 1.5em;
+  color: #a95e3e;
+  margin: 10px 0;
+}
+
+.modal-description, .modal-overview {
+  font-size: 1em;
+  color: #333;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Адаптивность для различных устройств */
+@media (max-width: 768px) {
+  .product-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    max-width: 100%;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+}
